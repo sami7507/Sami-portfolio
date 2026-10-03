@@ -129,7 +129,7 @@ footer{padding:48px 0 40px;color:var(--mut);font-size:.88rem}
 
 <div class="hero">
  <div class="hero-in">
-  <div class="photo" id="photo"><img id="ph" src="sami.jpg" alt="Md Sami Ahmad"></div>
+  <div class="photo" id="photo"><img id="ph" src="sami.jpeg" alt="Md Sami Ahmad" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='sami.jpg'}else{this.parentNode.textContent='MS'}"></div>
   <div>
    <h1>Md Sami Ahmad</h1>
    <p>I'm a B.Tech CSE student at Jaipur National University. I build machine learning projects and try to take each one all the way to something a person can open and use.</p>
@@ -292,14 +292,6 @@ footer{padding:48px 0 40px;color:var(--mut);font-size:.88rem}
 </nav>
 
 <script>
-// photo: try sami.jpg, then sami.jpeg, then show initials
-(function(){
- var img=document.getElementById('ph'),tries=['sami.jpeg'];
- img.onerror=function(){
-  var n=tries.shift();
-  if(n){img.src=n}else{img.remove();document.getElementById('photo').textContent='MS'}
- };
-})();
 document.getElementById('yr').textContent=new Date().getFullYear();
 
 // install button (Android/desktop) and a hint on iPhone
