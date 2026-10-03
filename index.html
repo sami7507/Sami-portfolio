@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Md Sami Ahmad | Data Science and Machine Learning</title>
+<meta name="description" content="Portfolio of Md Sami Ahmad, a B.Tech CSE student at Jaipur National University who builds machine learning projects from data to a working app.">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Sami">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#151a22;--mut:#566070;--line:#e2e6ec;--ac:#0f6b62;--acs:#e3f2f0;
+--h:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--b:'Public Sans','Segoe UI',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--b);-webkit-text-size-adjust:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px;border-radius:6px}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--h);line-height:1.15;letter-spacing:-.02em}
+h2{font-size:1.7rem;margin-bottom:6px}
+.sub{color:var(--mut);margin-bottom:24px;max-width:60ch}
+section{padding:56px 0 8px}
+
+/* top bar */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font:700 1.05rem var(--h);text-decoration:none}
+nav.top{display:flex;gap:22px;align-items:center}
+nav.top a{text-decoration:none;color:var(--mut);font-size:.92rem;font-weight:500}
+nav.top a:hover{color:var(--ink)}
+.install{display:none;background:var(--ac);color:#fff;border:0;border-radius:999px;padding:7px 16px;font:600 .85rem var(--b);cursor:pointer}
+
+/* hero */
+.hero{padding-top:44px}
+.hero-in{display:flex;gap:36px;align-items:center}
+.photo{flex:0 0 auto;width:170px;height:170px;border-radius:32px;background:var(--acs);color:var(--ac);display:grid;place-items:center;font:700 3rem var(--h);overflow:hidden;border:1px solid var(--line)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.hero h1{font-size:clamp(2.2rem,6vw,3.4rem);margin-bottom:12px}
+.hero p{color:var(--mut);max-width:54ch;font-size:1.05rem}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-block;padding:10px 20px;border-radius:10px;font-weight:600;font-size:.92rem;text-decoration:none;border:1px solid var(--line);background:var(--card)}
+.btn:hover{border-color:var(--ac);color:var(--ac)}
+.btn.p{background:var(--ac);border-color:var(--ac);color:#fff}
+.btn.p:hover{background:#0b5851;color:#fff}
+.facts{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:28px;color:var(--mut);font-size:.92rem}
+.facts b{color:var(--ink);font-weight:600}
+
+/* projects */
+.list{background:var(--card);border:1px solid var(--line);border-radius:18px}
+.pr{display:grid;grid-template-columns:1fr auto;gap:10px 24px;padding:22px 24px;border-top:1px solid var(--line)}
+.pr:first-child{border-top:0}
+.pr h3{font-size:1.15rem;margin-bottom:4px}
+.pr p{color:var(--mut);font-size:.95rem;max-width:62ch}
+.stack{margin-top:8px;font-size:.84rem;color:var(--ac);font-weight:500}
+.links{display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap}
+.links a{font-size:.85rem;font-weight:600;text-decoration:none;padding:6px 14px;border-radius:8px;border:1px solid var(--line);white-space:nowrap}
+.links a:hover{border-color:var(--ac);color:var(--ac)}
+.links a.live{background:var(--acs);border-color:var(--acs);color:var(--ac)}
+.small .pr{padding:16px 24px}
+.small h3{font-size:1rem}
+h3.group{font-size:1.05rem;margin:30px 0 12px}
+
+/* about / skills */
+.cols{display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
+.cols p{color:var(--mut);margin-bottom:14px}
+.edu{list-style:none}
+.edu li{padding:14px 0;border-top:1px solid var(--line)}
+.edu li:first-child{border-top:0;padding-top:0}
+.edu b{display:block;font-weight:600}
+.edu span{color:var(--mut);font-size:.92rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px 32px}
+.skills h3{font-size:1rem;margin-bottom:4px}
+.skills p{color:var(--mut);font-size:.95rem}
+.job{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+.job h3{font-size:1.1rem}
+.job .m{color:var(--mut);font-size:.9rem;margin:2px 0 10px}
+.job ul{padding-left:18px;color:var(--mut);font-size:.95rem}
+.job li{margin-bottom:4px}
+
+/* contact */
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.contact a{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-decoration:none}
+.contact a:hover{border-color:var(--ac)}
+.contact small{display:block;color:var(--mut);font-size:.82rem}
+.contact span{font-weight:600;word-break:break-all}
+footer{padding:48px 0 40px;color:var(--mut);font-size:.88rem}
+.ios{display:none;margin-top:10px;font-size:.85rem;color:var(--mut)}
+
+/* bottom tabs for phones */
+.tabs{display:none}
+@media(max-width:720px){
+ nav.top a{display:none}
+ .hero-in{flex-direction:column;align-items:flex-start;gap:20px}
+ .photo{width:112px;height:112px;border-radius:24px;font-size:2.2rem}
+ .cols{grid-template-columns:1fr;gap:28px}
+ .pr{grid-template-columns:1fr;padding:20px}
+ .small .pr{padding:16px 20px}
+ section{padding-top:44px}
+ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+ .tabs{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+ .tabs a{flex:1;text-align:center;padding:13px 4px;font-size:.8rem;font-weight:600;color:var(--mut);text-decoration:none}
+ .tabs a.on{color:var(--ac);box-shadow:inset 0 3px 0 var(--ac)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="wrap bar">
+  <a class="logo" href="#top">Md Sami Ahmad</a>
+  <nav class="top" aria-label="Main">
+   <a href="#projects">Projects</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+   <button class="install" id="install" type="button">Install app</button>
+  </nav>
+ </div>
+</header>
+
+<main id="top">
+<div class="wrap">
+
+<div class="hero">
+ <div class="hero-in">
+  <div class="photo" id="photo"><img id="ph" src="sami.jpg" alt="Md Sami Ahmad"></div>
+  <div>
+   <h1>Md Sami Ahmad</h1>
+   <p>I'm a B.Tech CSE student at Jaipur National University. I build machine learning projects and try to take each one all the way to something a person can open and use.</p>
+   <div class="btns">
+    <a class="btn p" href="#projects">See my projects</a>
+    <a class="btn" href="Sami%20CV%20Professional.pdf" target="_blank" rel="noopener">Resume</a>
+    <a class="btn" href="#contact">Contact me</a>
+   </div>
+  </div>
+ </div>
+ <div class="facts">
+  <span><b>Studying:</b> B.Tech CSE, 2024 to 2028</span>
+  <span><b>Based in:</b> Jaipur, Rajasthan</span>
+  <span><b>Looking for:</b> data science and ML roles, internships</span>
+ </div>
+ <div class="ios" id="ios">To install on iPhone: tap Share, then Add to Home Screen.</div>
+</div>
+
+<section id="projects">
+ <h2>Projects</h2>
+ <p class="sub">Each one is on GitHub with a README that explains how it works and where it falls short. Where a project is trained on synthetic data, I say so.</p>
+
+ <div class="list">
+  <article class="pr">
+   <div>
+    <h3>Citewell</h3>
+    <p>Ask questions about contracts and financial reports and get answers that point to the exact clause, table or page. If the documents don't have the answer, it says so instead of guessing. On my own 23-question test set it reached an MRR of 0.92 and a faithfulness score of 4.8 out of 5.</p>
+    <div class="stack">Python, FAISS, sentence-transformers, Streamlit, Groq</div>
+   </div>
+   <div class="links"><a class="live" href="https://citewell.streamlit.app" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/sami7507/Citewell" target="_blank" rel="noopener">Code</a></div>
+  </article>
+
+  <article class="pr">
+   <div>
+    <h3>Triavia</h3>
+    <p>An emergency triage assistant. You enter a patient's vital signs and it returns one of four urgency levels, a suggested action and the factors behind the result. Safety rules can raise the model's answer but never lower it. It has 126 automated tests. It is trained on synthetic data, so it is a demo and not a medical tool.</p>
+    <div class="stack">Python, FastAPI, scikit-learn, Streamlit</div>
+   </div>
+   <div class="links"><a href="https://github.com/sami7507/Trivia" target="_blank" rel="noopener">Code</a></div>
+  </article>
+
+  <article class="pr">
+   <div>
+    <h3>ChurnScope</h3>
+    <p>Predicts which telecom customers are likely to leave and explains each prediction with SHAP. Trained on the 7,043-customer Telco dataset with a ROC-AUC of 0.856. Comes with a FastAPI service, a Streamlit dashboard and a Docker setup.</p>
+    <div class="stack">Python, LightGBM, SHAP, FastAPI, Docker</div>
+   </div>
+   <div class="links"><a href="https://github.com/sami7507/ChurnScope" target="_blank" rel="noopener">Code</a></div>
+  </article>
+
+  <article class="pr">
+   <div>
+    <h3>LiftLab</h3>
+    <p>A dashboard for reading A/B test results. It checks the data for sample ratio mismatch first, then runs frequentist and Bayesian analysis, plans sample sizes and monitors a test day by day. You can paste numbers or upload a CSV. 59 tests cover the statistics.</p>
+    <div class="stack">Python, SciPy, statsmodels, Plotly, Streamlit</div>
+   </div>
+   <div class="links"><a href="https://github.com/sami7507/LiftLab" target="_blank" rel="noopener">Code</a></div>
+  </article>
+
+  <article class="pr">
+   <div>
+    <h3>VigiRail</h3>
+    <p>Predictive maintenance for railway rolling stock. A simulated sensor feed is scored by a Random Forest model, and four user roles see different views of the same data. It installs as an app on a phone and has 49 tests across backend and frontend. Trained on synthetic data.</p>
+    <div class="stack">Python, FastAPI, scikit-learn, React</div>
+   </div>
+   <div class="links"><a href="https://github.com/sami7507/VigiRail" target="_blank" rel="noopener">Code</a></div>
+  </article>
+
+  <article class="pr">
+   <div>
+    <h3>Enterprise Retail Forecasting</h3>
+    <p>Trains SARIMA, Prophet, XGBoost, LSTM and a blended model on the same sales series, keeps the one with the lowest error and serves it through an API. Runs are tracked in MLflow. On the sample data Prophet came out best.</p>
+    <div class="stack">Python, Prophet, XGBoost, TensorFlow, MLflow, Docker</div>
+   </div>
+   <div class="links"><a href="https://github.com/sami7507/Enterprise-Retail-Forecasting" target="_blank" rel="noopener">Code</a></div>
+  </article>
+ </div>
+
+ <h3 class="group">Smaller projects</h3>
+ <div class="list small">
+  <article class="pr">
+   <div><h3>Hybrid Time Series Research Lab</h3><p>Compares SARIMA, Prophet, XGBoost and LSTM on forecasting accuracy.</p></div>
+   <div class="links"><a href="https://github.com/sami7507/Hybrid-Time-Series-Research-Lab" target="_blank" rel="noopener">Code</a></div>
+  </article>
+  <article class="pr">
+   <div><h3>SkillScope AI Job Analyzer</h3><p>Matches a resume to job descriptions with TF-IDF and points out the skills you are missing.</p></div>
+   <div class="links"><a href="https://github.com/sami7507/SkillScope-AI-Job-Analyzer" target="_blank" rel="noopener">Code</a></div>
+  </article>
+  <article class="pr">
+   <div><h3>Smart Expense Tracker</h3><p>Tracks spending, shows patterns and predicts upcoming expenses. Built in JavaScript.</p></div>
+   <div class="links"><a href="https://github.com/sami7507/Smart-Expense-Tracker-with-Prediction" target="_blank" rel="noopener">Code</a></div>
+  </article>
+  <article class="pr">
+   <div><h3>Smart Data Analytics Engine</h3><p>Written in C. Reads CSV files, calculates basic statistics and fits a linear regression.</p></div>
+   <div class="links"><a href="https://github.com/sami7507/Smart-Data-Analytics-Engine" target="_blank" rel="noopener">Code</a></div>
+  </article>
+ </div>
+</section>
+
+<section id="about">
+ <h2>About me</h2>
+ <div class="cols" style="margin-top:18px">
+  <div>
+   <p>I started with plain Python and statistics, and my projects got bigger from there. What I enjoy most is the part after the model works: putting it behind an API, adding tests, writing down what it can't do, and getting it online.</p>
+   <p>Most of my recent work is on retrieval systems, forecasting and explaining model decisions. I'm looking for a data science or ML role where I can work on real problems with a team and learn from people who have shipped things.</p>
+  </div>
+  <ul class="edu">
+   <li><b>B.Tech, Computer Science</b><span>Jaipur National University, 2024 to 2028<br>CGPA 8.0</span></li>
+   <li><b>Senior Secondary</b><span>Sheonedi Sao College, 2022<br>77.8%</span></li>
+  </ul>
+ </div>
+</section>
+
+<section id="skills">
+ <h2>Skills</h2>
+ <p class="sub">The tools I have actually used in the projects above.</p>
+ <div class="skills">
+  <div><h3>Languages</h3><p>Python, SQL, JavaScript, C</p></div>
+  <div><h3>Machine learning</h3><p>scikit-learn, LightGBM, XGBoost, TensorFlow (LSTM), SHAP</p></div>
+  <div><h3>Data and statistics</h3><p>pandas, NumPy, SciPy, statsmodels, A/B testing, time series forecasting</p></div>
+  <div><h3>Search and NLP</h3><p>sentence-transformers, FAISS, TF-IDF, pdfplumber</p></div>
+  <div><h3>Building and shipping</h3><p>FastAPI, Streamlit, React, Docker, MLflow, pytest, GitHub Actions, Git</p></div>
+  <div><h3>Charts</h3><p>Matplotlib, Seaborn, Plotly</p></div>
+ </div>
+</section>
+
+<section id="experience">
+ <h2>Experience</h2>
+ <div class="job" style="margin-top:18px">
+  <h3>Data Science Project Coordinator, YuvaIntern</h3>
+  <div class="m">Remote, June to July 2026, 5 weeks. Final score 92 out of 100.</div>
+  <ul>
+   <li>Planned a data science project from scope to delivery, with phases, milestones and a Gantt chart.</li>
+   <li>Wrote the resource plan and a list of project risks with ways to handle them.</li>
+   <li>Finished all 5 weekly tasks.</li>
+  </ul>
+ </div>
+</section>
+
+<section id="contact">
+ <h2>Get in touch</h2>
+ <p class="sub">The quickest way to reach me is email. I reply to everything.</p>
+ <div class="contact">
+  <a href="mailto:samikhan75706@gmail.com"><small>Email</small><span>samikhan75706@gmail.com</span></a>
+  <a href="https://www.linkedin.com/in/sami7507" target="_blank" rel="noopener"><small>LinkedIn</small><span>linkedin.com/in/sami7507</span></a>
+  <a href="https://github.com/sami7507" target="_blank" rel="noopener"><small>GitHub</small><span>github.com/sami7507</span></a>
+ </div>
+</section>
+
+</div>
+</main>
+
+<footer><div class="wrap">&copy; <span id="yr">2026</span> Md Sami Ahmad. Jaipur, India.</div></footer>
+
+<nav class="tabs" aria-label="Sections">
+ <a href="#top" data-s="top" class="on">Home</a>
+ <a href="#projects" data-s="projects">Projects</a>
+ <a href="#about" data-s="about">About</a>
+ <a href="#contact" data-s="contact">Contact</a>
+</nav>
+
+<script>
+// photo: try sami.jpg, then sami.jpeg, then show initials
+(function(){
+ var img=document.getElementById('ph'),tries=['sami.jpeg'];
+ img.onerror=function(){
+  var n=tries.shift();
+  if(n){img.src=n}else{img.remove();document.getElementById('photo').textContent='MS'}
+ };
+})();
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// install button (Android/desktop) and a hint on iPhone
+var ev=null,btn=document.getElementById('install');
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();ev=e;btn.style.display='inline-block'});
+btn.addEventListener('click',function(){if(ev){ev.prompt();ev=null;btn.style.display='none'}});
+window.addEventListener('appinstalled',function(){btn.style.display='none'});
+var ios=/iphone|ipad|ipod/i.test(navigator.userAgent),standalone=window.navigator.standalone||matchMedia('(display-mode: standalone)').matches;
+if(ios&&!standalone)document.getElementById('ios').style.display='block';
+
+// highlight current tab on phones
+var tabs=document.querySelectorAll('.tabs a');
+if('IntersectionObserver' in window){
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(e.isIntersecting){tabs.forEach(function(t){t.classList.toggle('on',t.dataset.s===e.target.id)})}
+ })},{rootMargin:'-45% 0px -50% 0px'});
+ ['top','projects','about','contact'].forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+}
+
+if('serviceWorker' in navigator)window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});
+</script>
+</body>
+</html>
